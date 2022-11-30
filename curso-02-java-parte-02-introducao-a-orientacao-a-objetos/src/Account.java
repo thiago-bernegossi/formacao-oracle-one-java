@@ -5,4 +5,5 @@ public class Account {
 	int accountAgency;
 	int accountNumber;
 	String accountOwner;
+	String accountNickname;
 }

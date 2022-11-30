@@ -6,4 +6,8 @@ public class Account {
 	int accountNumber;
 	String accountOwner;
 	String accountNickname;
+	
+	public void depositValue(double value) {
+		this.accountBalance += value;
+	}
 }

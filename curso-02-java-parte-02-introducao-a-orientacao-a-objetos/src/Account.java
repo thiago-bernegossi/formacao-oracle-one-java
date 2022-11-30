@@ -2,7 +2,7 @@
 
 public class Account {
 	double accountBalance;
-	int accountAgency;
+	int accountAgency = 6543210;
 	int accountNumber;
 	String accountOwner;
 	String accountNickname;

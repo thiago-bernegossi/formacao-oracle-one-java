@@ -2,40 +2,40 @@
 
 public class Account {
 	double accountBalance;
-	int accountAgency = 6543210;
+	int accountAgency = 654321;
 	int accountNumber;
-	String accountOwner;
+	Client accountClient;
 	String accountNickname;
 	
-	public Boolean withdrawValue(double value) {
+	public boolean withdrawValue(double value) {
 		if (this.accountBalance >= value) {
-			this.accountBalance -= value;			
-			System.out.println("G-) A operação de saque de R$ " + value + " fora realizada.");
-			System.out.println("E-) O saldo atual da " + this.accountNickname + " é R$ " + this.accountBalance + ".");
+			this.accountBalance -= value;
+			System.out.println("\n--- OPERAÇÃO DE SAQUE ---");
+			System.out.println("J-) A operação de saque de R$ " + value + " fora realizada.");
 			return true;
 		} else {
-			System.out.println("G-) A operação de saque de R$ " + value + " não fora realizada.");
-			System.out.println("E-) O saldo atual da " + this.accountNickname + " é R$ " + this.accountBalance + ".");
+			System.out.println("\n--- OPERAÇÃO DE SAQUE ---");
+			System.out.println("J-) A operação de saque de R$ " + value + " não fora realizada.");
 			return false;
 		}
 	}
 	
 	public void depositValue(double value) {
 		this.accountBalance += value;
-		System.out.println("F-) A operação de depósito de R$ " + value + " fora realizada.");
-		System.out.println("E-) O saldo atual da " + this.accountNickname + " é R$ " + this.accountBalance + ".");
+		System.out.println("\n--- OPERAÇÃO DE DEPÓSITO ---");
+		System.out.println("H-) A operação de depósito de R$ " + value + " fora realizada.");
 	}
 	
 	public boolean transferValue(double value, Account destinationAccount) {
 		if (this.accountBalance >= value) {
 			this.accountBalance -= value;
-			destinationAccount.accountBalance += value;			
-			System.out.println("H-) A operação de transferência de R$ " + value + " fora realizada.");
-			System.out.println("E-) O saldo atual da " + this.accountNickname + " é R$ " + this.accountBalance + ".");			
+			destinationAccount.accountBalance += value;
+			System.out.println("\n--- OPERAÇÃO DE TRANSFERÊNCIA ---");
+			System.out.println("I-) A operação de transferência de R$ " + value + " fora realizada.");
 			return true;
 		} else {			
-			System.out.println("H-) A operação de transferência de R$ " + value + " não fora realizada.");
-			System.out.println("E-) O saldo atual da " + this.accountNickname + " é R$ " + this.accountBalance + ".");
+			System.out.println("\n--- OPERAÇÃO DE TRANSFERÊNCIA ---");
+			System.out.println("I-) A operação de transferência de R$ " + value + " não fora realizada.");
 			return false;
 		}
 	}

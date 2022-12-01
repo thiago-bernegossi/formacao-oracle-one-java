@@ -11,10 +11,18 @@ public class TestingMethods {
 		firstAccount.accountNickname = "Primeira Conta";
 		System.out.println("A-) A agência da " + firstAccount.accountNickname + " é " + firstAccount.accountAgency + ".");	
 
-		firstAccount.depositValue(75);
-		System.out.println("B-) O saldo atual da " + firstAccount.accountNickname + " é R$ " + firstAccount.accountBalance + ".");
-		
+		firstAccount.depositValue(150);		
 		firstAccount.withdrawValue(50);
+		
+		System.out.println();
+		
+		Account secondAccount = new Account();
+		
+		secondAccount.accountNickname = "Segunda Conta";
+		System.out.println("A-) A agência da " + secondAccount.accountNickname + " é " + secondAccount.accountAgency + ".");
+		
+		firstAccount.transferValue(50, secondAccount);		
+		System.out.println("E-) O saldo atual da " + secondAccount.accountNickname + " é R$ " + secondAccount.accountBalance + ".");
 		
 		System.out.println();
 		System.out.println("***** Obrigado(a) por utilizar nossos serviços. *****");

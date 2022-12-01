@@ -9,18 +9,34 @@ public class Account {
 	
 	public Boolean withdrawValue(double value) {
 		if (this.accountBalance >= value) {
-			this.accountBalance -= value;
-			System.out.println("C-) A operação de saque de R$ " + value + " fora realizada.");
-			System.out.println("D-) O saldo atual da " + this.accountNickname + " é R$ " + this.accountBalance + ".");
+			this.accountBalance -= value;			
+			System.out.println("G-) A operação de saque de R$ " + value + " fora realizada.");
+			System.out.println("E-) O saldo atual da " + this.accountNickname + " é R$ " + this.accountBalance + ".");
 			return true;
 		} else {
-			System.out.println("C-) A operação de saque de R$ " + value + " não fora realizada.");
-			System.out.println("D-) O saldo atual da " + this.accountNickname + " é R$ " + this.accountBalance + ".");
+			System.out.println("G-) A operação de saque de R$ " + value + " não fora realizada.");
+			System.out.println("E-) O saldo atual da " + this.accountNickname + " é R$ " + this.accountBalance + ".");
 			return false;
 		}
 	}
 	
 	public void depositValue(double value) {
 		this.accountBalance += value;
+		System.out.println("F-) A operação de depósito de R$ " + value + " fora realizada.");
+		System.out.println("E-) O saldo atual da " + this.accountNickname + " é R$ " + this.accountBalance + ".");
+	}
+	
+	public boolean transferValue(double value, Account destinationAccount) {
+		if (this.accountBalance >= value) {
+			this.accountBalance -= value;
+			destinationAccount.accountBalance += value;			
+			System.out.println("H-) A operação de transferência de R$ " + value + " fora realizada.");
+			System.out.println("E-) O saldo atual da " + this.accountNickname + " é R$ " + this.accountBalance + ".");			
+			return true;
+		} else {			
+			System.out.println("H-) A operação de transferência de R$ " + value + " não fora realizada.");
+			System.out.println("E-) O saldo atual da " + this.accountNickname + " é R$ " + this.accountBalance + ".");
+			return false;
+		}
 	}
 }

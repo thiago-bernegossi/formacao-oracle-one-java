@@ -2,6 +2,6 @@
 
 public class Client {
 	String clientItr;
-	String ClientLastName;
+	String clientLastName;
 	String clientName;
 }

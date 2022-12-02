@@ -3,22 +3,27 @@
 public class TestingReferences {
 
 	public static void main(String[] args) {
+		System.out.println("***** Olá! Seja muito bem-vindo(a) ao ByteBank! *****\n");
+		
 		Account firstAccount = new Account();
-		firstAccount.accountBalance = 1000;
 		firstAccount.accountNickname = "Primeira Conta";
 		
 		Account secondAccount = firstAccount;
-		
-		System.out.println("***** Olá! Seja muito bem-vindo(a) ao ByteBank! *****");	
-		System.out.println();
 
-		System.out.println("A-) O saldo atual da " + firstAccount.accountNickname + " é: R$ " + firstAccount.accountBalance + ";");
-		System.out.println("B-) A agência da " + firstAccount.accountNickname + " é: " + firstAccount.accountAgency + ".");	
+		System.out.println("D-) O saldo atual da " + firstAccount.accountNickname + " é R$ " + firstAccount.returnAccountBalance() + ".");
+		System.out.println("B-) A agência da " + firstAccount.accountNickname + " é " + firstAccount.accountAgency + ".");	
+		
+		firstAccount.depositValue(100);		
 		
 		System.out.println();
 		
-		System.out.println("A-) O saldo atual da " + secondAccount.accountNickname + " é: R$ " + secondAccount.accountBalance + ";");
-		System.out.println("B-) A agência da " + secondAccount.accountNickname + " é: " + secondAccount.accountAgency + ".");		
+		System.out.println("D-) O saldo atual da " + firstAccount.accountNickname + " é R$ " + firstAccount.returnAccountBalance() + ".");
+		System.out.println("B-) A agência da " + firstAccount.accountNickname + " é " + firstAccount.accountAgency + ".");	
+		
+		System.out.println();
+		
+		System.out.println("D-) O saldo atual da " + secondAccount.accountNickname + " é R$ " + secondAccount.returnAccountBalance() + ".");
+		System.out.println("B-) A agência da " + secondAccount.accountNickname + " é " + secondAccount.accountAgency + ".");	
 		
 		System.out.println();
 		
@@ -28,7 +33,6 @@ public class TestingReferences {
 			System.out.println("Obs.: Não existem várias referências para o mesmo objeto do tipo Conta!");
 		}
 		
-		System.out.println();
-		System.out.println("***** Obrigado(a) por utilizar nossos serviços. *****");
+		System.out.println("\n***** Obrigado(a) por utilizar nossos serviços. *****");
 	}
 }

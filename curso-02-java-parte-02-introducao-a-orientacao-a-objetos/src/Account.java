@@ -4,7 +4,7 @@ public class Account {
 	private double accountBalance;
 	private int accountAgency;
 	private int accountNumber;
-	public Client accountClient;
+	private Client accountClient;
 	private String accountNickname;
 
 	public double getAccountBalance() {
@@ -17,6 +17,10 @@ public class Account {
 
 	public int getAccountNumber() {
 		return this.accountNumber;
+	}
+	
+	public Client getAccountClient() {
+		return this.accountClient;
 	}
 
 	public String getAccountNickname() {
@@ -31,6 +35,10 @@ public class Account {
 		this.accountNumber = accountNumber;
 	}
 
+	public void setAccountClient(Client accountClient) {
+		this.accountClient = accountClient;
+	}
+	
 	public void setAccountNickname(String accountNickname) {
 		this.accountNickname = accountNickname;
 	}

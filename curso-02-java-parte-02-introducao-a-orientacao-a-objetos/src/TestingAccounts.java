@@ -6,8 +6,7 @@ public class TestingAccounts {
 		System.out.println("***** Olá! Seja muito bem-vindo(a) ao ByteBank! *****\n");
 		
 		Account thirdAccount = new Account();
-		thirdAccount.accountClient = new Client();
-		
+				
 		thirdAccount.setAccountNickname("Terceira Conta");
 		System.out.println("A-) O apelido da conta é " + thirdAccount.getAccountNickname() + ".");
 		
@@ -17,8 +16,11 @@ public class TestingAccounts {
 		thirdAccount.setAccountNumber(345678912);
 		System.out.println("C-) O número da " + thirdAccount.getAccountNickname() + " é " + thirdAccount.getAccountNumber() + ".");	
 		
-		thirdAccount.accountClient.clientName = "Michelangelo";
-		System.out.println("E-) O nome do titular da " + thirdAccount.getAccountNickname() + " é " + thirdAccount.accountClient.clientName + ".");	
+		Client thirdClient = new Client();
+		thirdAccount.setAccountClient(thirdClient);
+		
+		thirdAccount.getAccountClient().setClientName("Michelangelo");
+		System.out.println("E-) O nome do titular da " + thirdAccount.getAccountNickname() + " é " + thirdAccount.getAccountClient().getClientName() + ".");	
 		
 		System.out.println("\n***** Obrigado(a) por utilizar nossos serviços. *****");
 	}

@@ -16,10 +16,11 @@ public class CreateAccount {
 		firstAccount.setAccountNumber(123456789);
 		System.out.println("C-) O número da " + firstAccount.getAccountNickname() + " é " + firstAccount.getAccountNumber() + ".");	
 		
-		firstAccount.accountClient = new Client();		
+		Client firstClient = new Client();
+		firstAccount.setAccountClient(firstClient);
 		
-		firstAccount.accountClient.clientName = "Donatello";
-		System.out.println("E-) O nome do titular da " + firstAccount.getAccountNickname() + " é " + firstAccount.accountClient.clientName + ".");	
+		firstAccount.getAccountClient().setClientName("Donatello");
+		System.out.println("E-) O nome do titular da " + firstAccount.getAccountNickname() + " é " + firstAccount.getAccountClient().getClientName() + ".");	
 
 		firstAccount.depositValue(150);		
 		firstAccount.withdrawValue(50);
@@ -37,10 +38,11 @@ public class CreateAccount {
 		secondAccount.setAccountNumber(234567891);
 		System.out.println("C-) O número da " + secondAccount.getAccountNickname() + " é " + secondAccount.getAccountNumber() + ".");	
 		
-		secondAccount.accountClient = new Client();		
+		Client secondClient = new Client();
+		secondAccount.setAccountClient(secondClient);
 		
-		secondAccount.accountClient.clientName = "Leonardo";
-		System.out.println("E-) O nome do titular da " + secondAccount.getAccountNickname() + " é " + secondAccount.accountClient.clientName + ".");	
+		secondAccount.getAccountClient().setClientName("Leonardo");
+		System.out.println("E-) O nome do titular da " + secondAccount.getAccountNickname() + " é " + secondAccount.getAccountClient().getClientName() + ".");	
 
 		secondAccount.depositValue(150);				
 		firstAccount.transferValue(50, secondAccount);	

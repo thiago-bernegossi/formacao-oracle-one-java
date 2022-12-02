@@ -8,16 +8,17 @@ public class TestingAccounts {
 		Account thirdAccount = new Account();
 		thirdAccount.accountClient = new Client();
 		
-		thirdAccount.accountNickname = "Terceira Conta";
-		System.out.println("A-) O apelido da Conta é " + thirdAccount.accountNickname + ".");
+		thirdAccount.setAccountNickname("Terceira Conta");
+		System.out.println("A-) O apelido da conta é " + thirdAccount.getAccountNickname() + ".");
 		
-		System.out.println("B-) A agência da " + thirdAccount.accountNickname + " é " + thirdAccount.accountAgency + ".");	
+		thirdAccount.setAccountAgency(654321);
+		System.out.println("B-) A agência da " + thirdAccount.getAccountNickname() + " é " + thirdAccount.getAccountAgency() + ".");	
 		
-		thirdAccount.accountNumber = 345678912;
-		System.out.println("C-) O número da " + thirdAccount.accountNickname + " é " + thirdAccount.accountNumber + ".");	
+		thirdAccount.setAccountNumber(345678912);
+		System.out.println("C-) O número da " + thirdAccount.getAccountNickname() + " é " + thirdAccount.getAccountNumber() + ".");	
 		
 		thirdAccount.accountClient.clientName = "Michelangelo";
-		System.out.println("E-) O nome do titular da " + thirdAccount.accountNickname + " é " + thirdAccount.accountClient.clientName + ".");	
+		System.out.println("E-) O nome do titular da " + thirdAccount.getAccountNickname() + " é " + thirdAccount.accountClient.clientName + ".");	
 		
 		System.out.println("\n***** Obrigado(a) por utilizar nossos serviços. *****");
 	}

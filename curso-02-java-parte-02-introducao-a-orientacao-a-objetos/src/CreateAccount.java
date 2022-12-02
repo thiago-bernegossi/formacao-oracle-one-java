@@ -7,19 +7,19 @@ public class CreateAccount {
 		
 		Account firstAccount = new Account();
 		
-		firstAccount.accountNickname = "Primeira Conta";
-		System.out.println("A-) O apelido da Conta é " + firstAccount.accountNickname + ".");
+		firstAccount.setAccountNickname("Primeira Conta");
+		System.out.println("A-) O apelido da conta é " + firstAccount.getAccountNickname() + ".");
 		
-		System.out.println("B-) A agência da " + firstAccount.accountNickname + " é " + firstAccount.accountAgency + ".");	
+		firstAccount.setAccountAgency(654321);
+		System.out.println("B-) A agência da " + firstAccount.getAccountNickname() + " é " + firstAccount.getAccountAgency() + ".");	
 		
-		firstAccount.accountNumber = 123456789;
-		System.out.println("C-) O número da " + firstAccount.accountNickname + " é " + firstAccount.accountNumber + ".");	
+		firstAccount.setAccountNumber(123456789);
+		System.out.println("C-) O número da " + firstAccount.getAccountNickname() + " é " + firstAccount.getAccountNumber() + ".");	
 		
-		Client firstClient = new Client();		
-		firstAccount.accountClient = firstClient;
+		firstAccount.accountClient = new Client();		
 		
 		firstAccount.accountClient.clientName = "Donatello";
-		System.out.println("E-) O nome do titular da " + firstAccount.accountNickname + " é " + firstAccount.accountClient.clientName + ".");	
+		System.out.println("E-) O nome do titular da " + firstAccount.getAccountNickname() + " é " + firstAccount.accountClient.clientName + ".");	
 
 		firstAccount.depositValue(150);		
 		firstAccount.withdrawValue(50);
@@ -28,27 +28,27 @@ public class CreateAccount {
 		
 		Account secondAccount = new Account();
 		
-		secondAccount.accountNickname = "Segunda Conta";
-		System.out.println("A-) O apelido da Conta é " + secondAccount.accountNickname + ".");
+		secondAccount.setAccountNickname("Segunda Conta");
+		System.out.println("A-) O apelido da conta é " + secondAccount.getAccountNickname() + ".");
 		
-		System.out.println("B-) A agência da " + secondAccount.accountNickname + " é " + secondAccount.accountAgency + ".");	
+		secondAccount.setAccountAgency(654321);
+		System.out.println("B-) A agência da " + secondAccount.getAccountNickname() + " é " + secondAccount.getAccountAgency() + ".");	
 		
-		secondAccount.accountNumber = 234567891;
-		System.out.println("C-) O número da " + secondAccount.accountNickname + " é " + secondAccount.accountNumber + ".");	
+		secondAccount.setAccountNumber(234567891);
+		System.out.println("C-) O número da " + secondAccount.getAccountNickname() + " é " + secondAccount.getAccountNumber() + ".");	
 		
-		Client secondClient = new Client();		
-		secondAccount.accountClient = secondClient;
+		secondAccount.accountClient = new Client();		
 		
 		secondAccount.accountClient.clientName = "Leonardo";
-		System.out.println("E-) O nome do titular da " + secondAccount.accountNickname + " é " + secondAccount.accountClient.clientName + ".");	
+		System.out.println("E-) O nome do titular da " + secondAccount.getAccountNickname() + " é " + secondAccount.accountClient.clientName + ".");	
 
 		secondAccount.depositValue(150);				
 		firstAccount.transferValue(50, secondAccount);	
 		
 		System.out.println();
 		
-		System.out.println("D-) O saldo atual da " + firstAccount.accountNickname + " é R$ " + firstAccount.returnAccountBalance() + ".");
-		System.out.println("D-) O saldo atual da " + secondAccount.accountNickname + " é R$ " + secondAccount.returnAccountBalance() + ".");
+		System.out.println("D-) O saldo atual da " + firstAccount.getAccountNickname() + " é R$ " + firstAccount.getAccountBalance() + ".");
+		System.out.println("D-) O saldo atual da " + secondAccount.getAccountNickname() + " é R$ " + secondAccount.getAccountBalance() + ".");
 		
 		System.out.println("\n***** Obrigado(a) por utilizar nossos serviços. *****");
 	}

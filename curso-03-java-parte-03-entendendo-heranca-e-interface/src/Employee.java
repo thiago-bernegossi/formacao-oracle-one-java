@@ -7,19 +7,19 @@ public class Employee {
 	private String employeeName;
 
 	public double getEmployeeSalary() {
-		return employeeSalary;
+		return this.employeeSalary;
 	}
 
 	public String getEmployeeItr() {
-		return employeeItr;
+		return this.employeeItr;
 	}
 
 	public String getEmployeeLastName() {
-		return employeeLastName;
+		return this.employeeLastName;
 	}
 
 	public String getEmployeeName() {
-		return employeeName;
+		return this.employeeName;
 	}
 
 	public void setEmployeeSalary(double employeeSalary) {

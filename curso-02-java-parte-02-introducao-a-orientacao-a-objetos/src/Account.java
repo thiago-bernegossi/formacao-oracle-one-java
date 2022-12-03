@@ -6,6 +6,7 @@ public class Account {
 	private int accountNumber;
 	private Client accountClient;
 	private String accountNickname;
+	private static int amountOfBankAccounts;
 	
 	public Account(String accountNickname, int accountAgency, int accountNumber) {
 		if (accountNickname == " " || accountNickname == "" || accountAgency != 654321 || accountNumber <= 0) {
@@ -17,7 +18,9 @@ public class Account {
 			this.accountAgency = accountAgency;
 			this.accountNumber = accountNumber;
 			System.out.println("--- OPERAÇÃO DE ABERTURA DE CONTA ---");
-			System.out.println("A operação de abertura de conta fora realizada.\n");
+			System.out.println("A operação de abertura de conta fora realizada.\n");		
+			
+			Account.amountOfBankAccounts++;
 		}
 	}
 
@@ -39,6 +42,10 @@ public class Account {
 
 	public String getAccountNickname() {
 		return this.accountNickname;
+	}
+	
+	public static int getAmountOfBankAccounts() {
+		return Account.amountOfBankAccounts;
 	}
 	
 	public void setAccountClient(Client accountClient) {

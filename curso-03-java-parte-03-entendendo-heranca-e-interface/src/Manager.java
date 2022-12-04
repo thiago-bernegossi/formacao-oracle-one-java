@@ -4,6 +4,10 @@ public class Manager extends Employee {
 
 	private String managerPassword = "*ABCD1234*";
 	
+	public double getEmployeeSalaryBonus() {
+		return super.getEmployeeSalary() * 0.25;
+	}
+	
 	public String getManagerPassword() {
 		return this.managerPassword;
 	}
@@ -22,9 +26,5 @@ public class Manager extends Employee {
 			System.out.println("A operação de autenticação do gerente " + this.getEmployeeName() + " não fora realizada.");
 			return false;
 		}
-	}
-	
-	public double salaryBonus() {
-		return super.employeeSalary * 0.25;
 	}
 }

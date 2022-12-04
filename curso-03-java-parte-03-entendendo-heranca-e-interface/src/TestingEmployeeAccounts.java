@@ -16,7 +16,7 @@ public class TestingEmployeeAccounts {
 		firstEmployee.setEmployeeSalary(3250.50);
 		System.out.println("O salário do funcionário é R$ " + firstEmployee.getEmployeeSalary() + ".");
 
-		System.out.println("O bônus salarial do funcionário é R$ " + firstEmployee.salaryBonus() + ".");
+		System.out.println("O bônus salarial do funcionário é R$ " + firstEmployee.getEmployeeSalaryBonus() + ".");
 
 		System.out.println("\n***** Obrigado(a) por utilizar nossos serviços. *****");
 	}

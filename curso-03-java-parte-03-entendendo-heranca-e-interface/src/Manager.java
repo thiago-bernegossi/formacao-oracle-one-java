@@ -23,4 +23,8 @@ public class Manager extends Employee {
 			return false;
 		}
 	}
+	
+	public double salaryBonus() {
+		return super.employeeSalary * 0.25;
+	}
 }

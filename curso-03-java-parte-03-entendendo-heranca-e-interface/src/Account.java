@@ -1,6 +1,6 @@
 // Este código-fonte segue a definição completa dos padrões de codificação do Google para a linguagem de programação Java™.
 
-public class Account {
+public abstract class Account {
 	private double accountBalance;
 	private int accountAgency;
 	private int accountNumber;
@@ -56,17 +56,6 @@ public class Account {
 		this.accountNickname = accountNickname;
 	}
 
-	public void withdrawValue(double value) {
-		if (this.accountBalance >= value) {
-			this.accountBalance -= value;
-			System.out.println("\n--- OPERAÇÃO DE SAQUE ---");
-			System.out.println("A operação de saque de R$ " + value + " fora realizada.");
-		} else {
-			System.out.println("\n--- OPERAÇÃO DE SAQUE ---");
-			System.out.println("A operação de saque de R$ " + value + " não fora realizada.");
-		}
-	}
-
 	public void depositValue(double value) {
 		if (value >= 1) {
 			this.accountBalance += value;
@@ -87,6 +76,17 @@ public class Account {
 		} else {
 			System.out.println("\n--- OPERAÇÃO DE TRANSFERÊNCIA ---");
 			System.out.println("A operação de transferência de R$ " + value + " não fora realizada.");
+		}
+	}
+	
+	public void withdrawValue(double value) {
+		if (this.accountBalance >= value) {
+			this.accountBalance -= value;
+			System.out.println("\n--- OPERAÇÃO DE SAQUE ---");
+			System.out.println("A operação de saque de R$ " + value + " fora realizada.");
+		} else {
+			System.out.println("\n--- OPERAÇÃO DE SAQUE ---");
+			System.out.println("A operação de saque de R$ " + value + " não fora realizada.");
 		}
 	}
 }

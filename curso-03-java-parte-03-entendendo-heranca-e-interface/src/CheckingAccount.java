@@ -7,14 +7,14 @@ public class CheckingAccount extends Account {
 	}
 	
 	@Override
-	public void withdrawValue(double value) {
-		double newValue = value + 0.10;
-		super.withdrawValue(newValue);
-	}
-	
-	@Override
 	public void transferValue(double value, Account destinationAccount) {
 		double newValue = value + 0.10;
 		super.transferValue(newValue, destinationAccount);
+	}
+	
+	@Override
+	public void withdrawValue(double value) {
+		double newValue = value + 0.10;
+		super.withdrawValue(newValue);
 	}
 }

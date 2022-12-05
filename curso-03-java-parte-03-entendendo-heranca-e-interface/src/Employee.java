@@ -1,6 +1,6 @@
 // Este código-fonte segue a definição completa dos padrões de codificação do Google para a linguagem de programação Java™.
 
-public class Employee {
+public abstract class Employee {
 	private double employeeSalary;
 	private String employeeItr;
 	private String employeeLastName;

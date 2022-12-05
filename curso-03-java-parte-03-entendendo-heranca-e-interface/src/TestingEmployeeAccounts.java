@@ -7,28 +7,12 @@ public class TestingEmployeeAccounts {
 
 		CalculateSalaryBonus calculateSalaryBonus = new CalculateSalaryBonus();
 		
-		Employee firstEmployee = new Employee();
-
-		firstEmployee.setEmployeeName("Donatello");
-		System.out.println("O nome do funcionário é " + firstEmployee.getEmployeeName() + ".");
-
-		firstEmployee.setEmployeeItr("111.111.111-11");
-		System.out.println("O CPF do funcionário é " + firstEmployee.getEmployeeItr() + ".");
-
-		firstEmployee.setEmployeeSalary(3250.50);
-		System.out.println("O salário do funcionário é R$ " + firstEmployee.getEmployeeSalary() + ".");
-
-		System.out.println("O bônus salarial do funcionário é R$ " + firstEmployee.getEmployeeSalaryBonus() + ".");		
-		calculateSalaryBonus.registerSalaryBonus(firstEmployee);
-		
-		System.out.println();
-		
 		Manager firstManager = new Manager();
 		
-		firstManager.setEmployeeName("Leonardo");
+		firstManager.setEmployeeName("Donatello");
 		System.out.println("O nome do gerente é " + firstManager.getEmployeeName() + ".");
 
-		firstManager.setEmployeeItr("222.222.222-22");
+		firstManager.setEmployeeItr("111.111.111-11");
 		System.out.println("O CPF do gerente é " + firstManager.getEmployeeItr() + ".");
 
 		firstManager.setEmployeeSalary(5250.50);
@@ -43,10 +27,10 @@ public class TestingEmployeeAccounts {
 		
 		Director firstDirector = new Director();
 		
-		firstDirector.setEmployeeName("Michelangelo");
+		firstDirector.setEmployeeName("Leonardo");
 		System.out.println("O nome do diretor é " + firstDirector.getEmployeeName() + ".");
 
-		firstDirector.setEmployeeItr("333.333.333-33");
+		firstDirector.setEmployeeItr("222.222.222-22");
 		System.out.println("O CPF do diretor é " + firstDirector.getEmployeeItr() + ".");
 
 		firstDirector.setEmployeeSalary(5250.50);

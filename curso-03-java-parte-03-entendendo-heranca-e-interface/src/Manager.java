@@ -19,11 +19,11 @@ public class Manager extends Employee {
 	public boolean authenticatePassword(String managerPassword) {
 		if (this.managerPassword == managerPassword) {
 			System.out.println("\n--- OPERAÇÃO DE AUTENTICAÇÃO ---");
-			System.out.println("A operação de autenticação do gerente " + this.getEmployeeName() + " fora realizada.");
+			System.out.println("A operação de autenticação do gerente " + super.getEmployeeName() + " fora realizada.");
 			return true;
 		} else {
 			System.out.println("\n--- OPERAÇÃO DE AUTENTICAÇÃO ---");
-			System.out.println("A operação de autenticação do gerente " + this.getEmployeeName() + " não fora realizada.");
+			System.out.println("A operação de autenticação do gerente " + super.getEmployeeName() + " não fora realizada.");
 			return false;
 		}
 	}

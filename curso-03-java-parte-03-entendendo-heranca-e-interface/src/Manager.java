@@ -4,6 +4,7 @@ public class Manager extends Employee {
 
 	private String managerPassword = "*ABCD1234*";
 	
+	@Override
 	public double getEmployeeSalaryBonus() {
 		return super.getEmployeeSalary() * 0.25;
 	}

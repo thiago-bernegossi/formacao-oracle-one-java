@@ -6,12 +6,10 @@ public abstract class Employee {
 	private String employeeLastName;
 	private String employeeName;
 
+	public abstract double getEmployeeSalaryBonus();
+	
 	public double getEmployeeSalary() {
 		return this.employeeSalary;
-	}
-	
-	public double getEmployeeSalaryBonus() {
-		return this.employeeSalary * 0.125;
 	}
 
 	public String getEmployeeItr() {

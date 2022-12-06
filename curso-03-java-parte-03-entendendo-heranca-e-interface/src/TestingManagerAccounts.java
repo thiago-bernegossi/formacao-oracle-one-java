@@ -16,7 +16,7 @@ public class TestingManagerAccounts {
 		firstManager.setEmployeeSalary(5250.50);
 		System.out.println("O salário do gerente é R$ " + firstManager.getEmployeeSalary() + ".");
 		
-		System.out.println("O bônus salarial do gerente é R$ " + firstManager.getEmployeeSalaryBonus() + ".");
+		System.out.println("O bônus salarial do gerente é R$ " + firstManager.employeeSalaryBonus() + ".");
 		
 		firstManager.authenticatePassword("*ABCD1234*");
 

@@ -9,7 +9,7 @@ public class CalculateSalaryBonus {
 	}
 	
 	public void registerSalaryBonus(Employee employee) {
-		double employeeSalaryBonus = employee.getEmployeeSalaryBonus();
+		double employeeSalaryBonus = employee.employeeSalaryBonus();
 		this.totalSalaryBonus += employeeSalaryBonus;
 	}	
 }

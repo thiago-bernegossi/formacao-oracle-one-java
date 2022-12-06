@@ -16,7 +16,7 @@ public class TestingReferences {
 		secondManager.setEmployeeSalary(5250.50);
 		System.out.println("O salário do gerente é R$ " + secondManager.getEmployeeSalary() + ".");
 		
-		System.out.println("O bônus salarial do gerente é R$ " + secondManager.getEmployeeSalaryBonus() + ".");
+		System.out.println("O bônus salarial do gerente é R$ " + secondManager.employeeSalaryBonus() + ".");
 		
 		System.out.println("\n***** Obrigado(a) por utilizar nossos serviços. *****");
 	}

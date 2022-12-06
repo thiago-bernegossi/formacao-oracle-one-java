@@ -4,19 +4,6 @@ public class Director extends Employee {
 
 	private String directorPassword = "*EFGH5678*";
 	
-	@Override
-	public double getEmployeeSalaryBonus() {
-		return super.getEmployeeSalary() * 0.50;
-	}
-	
-	public String getDirectorPassword() {
-		return this.directorPassword;
-	}
-
-	public void setDirectorPassword(String directorPassword) {
-		this.directorPassword = directorPassword;
-	}
-	
 	public boolean authenticatePassword(String directorPassword) {
 		if (this.directorPassword == directorPassword) {
 			System.out.println("\n--- OPERAÇÃO DE AUTENTICAÇÃO ---");
@@ -27,5 +14,18 @@ public class Director extends Employee {
 			System.out.println("A operação de autenticação do diretor " + super.getEmployeeName() + " não fora realizada.");
 			return false;
 		}
+	}
+	
+	@Override
+	public double employeeSalaryBonus() {
+		return super.getEmployeeSalary() * 0.50;
+	}
+	
+	public String getDirectorPassword() {
+		return this.directorPassword;
+	}
+
+	public void setDirectorPassword(String directorPassword) {
+		this.directorPassword = directorPassword;
 	}
 }

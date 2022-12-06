@@ -18,7 +18,7 @@ public class TestingEmployeeAccounts {
 		firstManager.setEmployeeSalary(5250.50);
 		System.out.println("O salário do gerente é R$ " + firstManager.getEmployeeSalary() + ".");
 		
-		System.out.println("O bônus salarial do gerente é R$ " + firstManager.getEmployeeSalaryBonus() + ".");
+		System.out.println("O bônus salarial do gerente é R$ " + firstManager.employeeSalaryBonus() + ".");
 		calculateSalaryBonus.registerSalaryBonus(firstManager);
 		
 		firstManager.authenticatePassword("*ABCD1234*");
@@ -36,7 +36,7 @@ public class TestingEmployeeAccounts {
 		firstDirector.setEmployeeSalary(5250.50);
 		System.out.println("O salário do diretor é R$ " + firstDirector.getEmployeeSalary() + ".");
 		
-		System.out.println("O bônus salarial do diretor é R$ " + firstDirector.getEmployeeSalaryBonus() + ".");
+		System.out.println("O bônus salarial do diretor é R$ " + firstDirector.employeeSalaryBonus() + ".");
 		calculateSalaryBonus.registerSalaryBonus(firstDirector);
 		
 		firstDirector.authenticatePassword("*EFGH5678*");

@@ -2,19 +2,15 @@
 
 public class Manager extends Employee implements AuthenticateAccess {
 
-	private String managerPassword = "*EFGH4567*";
+	private AuthenticationProcess authenticator;
+
+	public Manager() {
+		this.authenticator = new AuthenticationProcess();
+	}
 
 	@Override
 	public boolean authenticatePassword(String password) {
-		if (this.managerPassword == password) {
-			System.out.println("\n--- OPERAÇÃO DE AUTENTICAÇÃO ---");
-			System.out.println("A operação de autenticação do gerente " + super.getEmployeeName() + " fora realizada.");
-			return true;
-		} else {
-			System.out.println("\n--- OPERAÇÃO DE AUTENTICAÇÃO ---");
-			System.out.println("A operação de autenticação do gerente " + super.getEmployeeName() + " não fora realizada.");
-			return false;
-		}
+		return this.authenticator.authenticatePassword(password);
 	}
 	
 	@Override

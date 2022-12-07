@@ -1,6 +1,6 @@
 // Este código-fonte segue a definição completa dos padrões de codificação do Google para a linguagem de programação Java™.
 
-public abstract class AuthenticatedEmployee extends Employee {
+public abstract class AuthenticateAccess {
 	
 	private String directorPassword = "*ABCD1234*";
 	private String managerPassword = "*EFGH5678*";

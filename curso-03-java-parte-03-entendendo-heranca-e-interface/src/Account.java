@@ -1,6 +1,7 @@
 // Este código-fonte segue a definição completa dos padrões de codificação do Google para a linguagem de programação Java™.
 
 public abstract class Account {
+	
 	private double accountBalance;
 	private int accountAgency;
 	private int accountNumber;
@@ -11,14 +12,14 @@ public abstract class Account {
 	public Account(String accountNickname, int accountAgency, int accountNumber) {
 		if (accountNickname == " " || accountNickname == "" || accountAgency != 654321 || accountNumber <= 0) {
 			System.out.println("--- OPERAÇÃO DE ABERTURA DE CONTA ---");
-			System.out.println("A operação de abertura de conta não fora realizada.\n");
+			System.out.println("A operação de abertura da conta não fora realizada.\n");
 			return;
 		} else {
 			this.accountNickname = accountNickname;
 			this.accountAgency = accountAgency;
 			this.accountNumber = accountNumber;
 			System.out.println("--- OPERAÇÃO DE ABERTURA DE CONTA ---");
-			System.out.println("A operação de abertura de conta fora realizada.\n");		
+			System.out.println("A operação de abertura da conta fora realizada.\n");		
 			
 			Account.amountOfBankAccounts++;
 		}

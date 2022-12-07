@@ -2,7 +2,7 @@
 
 public class Director extends Employee implements AuthenticateAccess {
 
-	private String directorPassword = "*ABCD1234*";
+	private String directorPassword = "*ABCD0123*";
 	
 	@Override
 	public boolean authenticatePassword(String password) {

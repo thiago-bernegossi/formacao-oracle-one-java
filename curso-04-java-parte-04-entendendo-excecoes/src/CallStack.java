@@ -23,6 +23,7 @@ public class CallStack {
 
 		for (int counter = 0; counter <= 10; counter++) {
 			System.out.println(counter);
+			int exception = counter / 0;
 		}
 
 		System.out.println("\nFinal da execução do método secondMethod.");

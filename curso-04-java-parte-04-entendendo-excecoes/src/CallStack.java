@@ -5,9 +5,14 @@ public class CallStack {
 	public static void main(String[] args) {
 		System.out.println("Início da execução do método main.");
 
-		firstMethod();
+		try {
+			firstMethod();
+		} catch (ArithmeticException | NullPointerException exception) {
+			System.out.println("\n--- OPERAÇÃO DE TRATAMENTO DE EXCEÇÃO ---");
+			exception.printStackTrace();
+		}
 
-		System.out.println("Final da execução do método main.");
+		System.out.println("\nFinal da execução do método main.");
 	}
 
 	private static void firstMethod() {
@@ -24,11 +29,10 @@ public class CallStack {
 		for (int counter = 0; counter <= 10; counter++) {
 			System.out.println(counter);
 
-			try {
-				int exception = counter / 0;
-			} catch (ArithmeticException exception) {
-				System.out.println("ArithmeticException");
-			}
+			// int problematicCode = counter / 0;
+
+			Account firstAccount = null;
+			firstAccount.depositValue(100);
 		}
 
 		System.out.println("\nFinal da execução do método secondMethod.");

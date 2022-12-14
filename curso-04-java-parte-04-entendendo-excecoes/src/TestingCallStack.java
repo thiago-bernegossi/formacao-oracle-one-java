@@ -1,13 +1,18 @@
 //Este código-fonte segue a definição completa dos padrões de codificação do Google para a linguagem de programação Java™.
 
-public class CallStack {
+public class TestingCallStack {
 
 	public static void main(String[] args) {
 		System.out.println("Início da execução do método main.");
 
-		firstMethod();
-		
-		System.out.println("Final da execução do método main.");
+		try {
+			firstMethod();
+		} catch (ArithmeticException | NullPointerException exception) {
+			System.out.println("--- OPERAÇÃO DE TRATAMENTO DE EXCEÇÃO ---");
+			exception.printStackTrace();
+		}
+
+		System.out.println("\nFinal da execução do método main.");
 	}
 
 	private static void firstMethod() {
@@ -21,10 +26,8 @@ public class CallStack {
 	private static void secondMethod() {
 		System.out.println("Início da execução do método secondMethod.\n");
 
-		for (int counter = 0; counter <= 10; counter++) {
-			System.out.println(counter);
-		}
-
-		System.out.println("\nFinal da execução do método secondMethod.");
+		throw new ArithmeticException();
+		
+		// System.out.println("Final da execução do método secondMethod.");
 	}
 }

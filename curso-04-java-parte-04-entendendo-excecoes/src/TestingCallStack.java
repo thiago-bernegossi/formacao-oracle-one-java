@@ -7,7 +7,7 @@ public class TestingCallStack {
 
 		try {
 			firstMethod();
-		} catch (ArithmeticException | CheckedException | NullPointerException | UncheckedException exception) {
+		} catch (Exception exception) {
 			System.out.println("--- OPERAÇÃO DE TRATAMENTO DE EXCEÇÃO ---");
 			exception.printStackTrace();
 		}

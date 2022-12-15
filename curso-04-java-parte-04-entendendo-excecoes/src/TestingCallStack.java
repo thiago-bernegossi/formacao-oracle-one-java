@@ -7,7 +7,7 @@ public class TestingCallStack {
 
 		try {
 			firstMethod();
-		} catch (ArithmeticException | NullPointerException exception) {
+		} catch (ArithmeticException | ExampleException | NullPointerException exception) {
 			System.out.println("--- OPERAÇÃO DE TRATAMENTO DE EXCEÇÃO ---");
 			exception.printStackTrace();
 		}
@@ -26,7 +26,7 @@ public class TestingCallStack {
 	private static void secondMethod() {
 		System.out.println("Início da execução do método secondMethod.\n");
 
-		throw new ArithmeticException();
+		throw new ExampleException();
 		
 		// System.out.println("Final da execução do método secondMethod.");
 	}

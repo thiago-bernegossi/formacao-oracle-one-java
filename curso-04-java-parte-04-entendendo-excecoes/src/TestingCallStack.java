@@ -7,7 +7,7 @@ public class TestingCallStack {
 
 		try {
 			firstMethod();
-		} catch (ArithmeticException | ExampleException | NullPointerException exception) {
+		} catch (ArithmeticException | CheckedException | NullPointerException | UncheckedException exception) {
 			System.out.println("--- OPERAÇÃO DE TRATAMENTO DE EXCEÇÃO ---");
 			exception.printStackTrace();
 		}
@@ -15,7 +15,7 @@ public class TestingCallStack {
 		System.out.println("\nFinal da execução do método main.");
 	}
 
-	private static void firstMethod() {
+	private static void firstMethod() throws CheckedException {
 		System.out.println("Início da execução do método firstMethod.");
 
 		secondMethod();
@@ -23,10 +23,10 @@ public class TestingCallStack {
 		System.out.println("Final da execução do método firstMethod.");
 	}
 
-	private static void secondMethod() {
+	private static void secondMethod() throws CheckedException {
 		System.out.println("Início da execução do método secondMethod.\n");
 
-		throw new ExampleException();
+		throw new CheckedException();
 		
 		// System.out.println("Final da execução do método secondMethod.");
 	}

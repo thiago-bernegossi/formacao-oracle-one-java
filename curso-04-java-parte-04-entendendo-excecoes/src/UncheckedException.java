@@ -1,12 +1,12 @@
 //Este código-fonte segue a definição completa dos padrões de codificação do Google para a linguagem de programação Java™.
 
-public class ExampleException extends RuntimeException {
+public class UncheckedException extends RuntimeException {
 
-	public ExampleException() {
+	public UncheckedException() {
 		super();
 	}
 	
-	public ExampleException(String message) {
+	public UncheckedException(String message) {
 		super(message);
 	}
 }

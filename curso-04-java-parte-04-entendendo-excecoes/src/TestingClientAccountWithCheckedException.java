@@ -29,7 +29,7 @@ public class TestingClientAccountWithCheckedException {
 		System.out.println("O saldo atual da " + firstAccount.getAccountNickname() + " é R$ " + firstAccount.getAccountBalance() + ".");
 		System.out.println("O saldo atual da " + secondAccount.getAccountNickname() + " é R$ " + secondAccount.getAccountBalance() + ".");
 		
-		System.out.println("\nObs.: A quantidade de contas abertas no ByteBank é " + AccountWithCheckedException.getAmountOfBankAccounts() + ".");
+		System.out.println("\nObs.: A quantidade de contas abertas no ByteBank é " + CheckingAccountWithCheckedException.getAmountOfBankAccounts() + ".");
 		
 		System.out.println("\n***** Obrigado(a) por utilizar nossos serviços. *****");
 	}

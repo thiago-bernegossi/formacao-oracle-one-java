@@ -2,7 +2,8 @@
 
 package br.com.bytebank.system.test;
 
-import br.com.bytebank.system.model.*;
+import br.com.bytebank.system.model.CheckedException;
+import br.com.bytebank.system.model.CheckingAccountWithCheckedException;
 
 public class TestingClientAccountWithCheckedException {
 

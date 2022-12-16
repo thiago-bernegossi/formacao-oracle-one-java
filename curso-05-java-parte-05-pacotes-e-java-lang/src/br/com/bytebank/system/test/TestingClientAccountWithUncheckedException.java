@@ -2,7 +2,7 @@
 
 package br.com.bytebank.system.test;
 
-import br.com.bytebank.system.model.*;
+import br.com.bytebank.system.model.CheckingAccountWithUncheckedException;
 
 public class TestingClientAccountWithUncheckedException {
 

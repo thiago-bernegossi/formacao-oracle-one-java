@@ -2,18 +2,12 @@
 
 public class TestingConnection {
 
-	public static void main(String[] args) {
-		Connection firstConnection = null;
-		
-		try {
-			firstConnection = new Connection();
+	public static void main(String[] args) throws Exception {
+		try (Connection firstConnection = new Connection()) {
 			firstConnection.extractData();
 		} catch (IllegalStateException exception) {
 			System.out.println("--- OPERAÇÃO DE TRATAMENTO DE EXCEÇÃO ---");
 			exception.printStackTrace();
-		} finally {
-			System.out.println();
-			firstConnection.closeConnection();
 		}
 	}
 }

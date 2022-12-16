@@ -1,17 +1,17 @@
 // Este código-fonte segue a definição completa dos padrões de codificação do Google para a linguagem de programação Java™.
 
-package model;
+package br.com.bytebank.system.model;
 
-public abstract class Account {
-	
+public abstract class AccountWithUncheckedException {
+
 	private double accountBalance;
 	private int accountAgency;
 	private int accountNumber;
 	private Client accountClient;
 	private String accountNickname;
 	private static int amountOfBankAccounts;
-	
-	public Account(String accountNickname, int accountAgency, int accountNumber) {
+
+	public AccountWithUncheckedException(String accountNickname, int accountAgency, int accountNumber) {
 		if (accountNickname == " " || accountNickname == "" || accountAgency != 654321 || accountNumber <= 0) {
 			System.out.println("--- OPERAÇÃO DE ABERTURA DE CONTA ---");
 			System.out.println("A operação de abertura da conta não fora realizada.\n");
@@ -21,20 +21,20 @@ public abstract class Account {
 			this.accountAgency = accountAgency;
 			this.accountNumber = accountNumber;
 			System.out.println("--- OPERAÇÃO DE ABERTURA DE CONTA ---");
-			System.out.println("A operação de abertura da conta fora realizada.\n");		
-			
-			Account.amountOfBankAccounts++;
+			System.out.println("A operação de abertura da conta fora realizada.\n");
+
+			AccountWithUncheckedException.amountOfBankAccounts++;
 		}
 	}
 
 	public double getAccountBalance() {
 		return this.accountBalance;
 	}
-	
+
 	public int getAccountAgency() {
 		return this.accountAgency;
 	}
-	
+
 	public int getAccountNumber() {
 		return this.accountNumber;
 	}
@@ -46,15 +46,15 @@ public abstract class Account {
 	public String getAccountNickname() {
 		return this.accountNickname;
 	}
-	
+
 	public static int getAmountOfBankAccounts() {
-		return Account.amountOfBankAccounts;
+		return AccountWithUncheckedException.amountOfBankAccounts;
 	}
-	
+
 	public void setAccountClient(Client accountClient) {
 		this.accountClient = accountClient;
 	}
-	
+
 	public void setAccountNickname(String accountNickname) {
 		this.accountNickname = accountNickname;
 	}
@@ -70,26 +70,26 @@ public abstract class Account {
 		}
 	}
 
-	public void transferValue(double value, Account destinationAccount) {
-		if (this.accountBalance >= value) {
-			this.accountBalance -= value;
-			destinationAccount.accountBalance += value;
+	public void transferValue(double value, AccountWithUncheckedException destinationAccount) {
+		if (this.accountBalance < value) {
+			System.out.println("\n--- OPERAÇÃO DE TRANSFERÊNCIA ---");
+			throw new UncheckedException("A operação de transferência de R$ " + value + " não fora realizada.");
+		} else {
+			this.withdrawValue(value);
+			destinationAccount.depositValue(value);
 			System.out.println("\n--- OPERAÇÃO DE TRANSFERÊNCIA ---");
 			System.out.println("A operação de transferência de R$ " + value + " fora realizada.");
-		} else {
-			System.out.println("\n--- OPERAÇÃO DE TRANSFERÊNCIA ---");
-			System.out.println("A operação de transferência de R$ " + value + " não fora realizada.");
 		}
 	}
-	
+
 	public void withdrawValue(double value) {
-		if (this.accountBalance >= value) {
+		if (this.accountBalance < value) {
+			System.out.println("\n--- OPERAÇÃO DE SAQUE ---");
+			throw new UncheckedException("A operação de saque de R$ " + value + " não fora realizada.");
+		} else {
 			this.accountBalance -= value;
 			System.out.println("\n--- OPERAÇÃO DE SAQUE ---");
 			System.out.println("A operação de saque de R$ " + value + " fora realizada.");
-		} else {
-			System.out.println("\n--- OPERAÇÃO DE SAQUE ---");
-			System.out.println("A operação de saque de R$ " + value + " não fora realizada.");
 		}
 	}
 }

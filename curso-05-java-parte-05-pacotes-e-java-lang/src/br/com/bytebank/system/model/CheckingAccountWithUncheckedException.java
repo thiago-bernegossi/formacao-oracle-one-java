@@ -1,10 +1,10 @@
 // Este código-fonte segue a definição completa dos padrões de codificação do Google para a linguagem de programação Java™.
 
-package model;
+package br.com.bytebank.system.model;
 
-public class CheckingAccountWithCheckedException extends AccountWithCheckedException implements Taxable {
+public class CheckingAccountWithUncheckedException extends AccountWithUncheckedException implements Taxable {
 
-	public CheckingAccountWithCheckedException(String accountNickname, int accountAgency, int accountNumber) {
+	public CheckingAccountWithUncheckedException(String accountNickname, int accountAgency, int accountNumber) {
 		super(accountNickname, accountAgency, accountNumber);
 	}
 	
@@ -14,13 +14,13 @@ public class CheckingAccountWithCheckedException extends AccountWithCheckedExcep
 	}
 	
 	@Override
-	public void transferValue(double value, AccountWithCheckedException destinationAccount) throws CheckedException {
+	public void transferValue(double value, AccountWithUncheckedException destinationAccount) {
 		double newValue = value + 0.10;
 		super.transferValue(newValue, destinationAccount);
 	}
 	
 	@Override
-	public void withdrawValue(double value) throws CheckedException {
+	public void withdrawValue(double value) {
 		double newValue = value + 0.10;
 		super.withdrawValue(newValue);
 	}

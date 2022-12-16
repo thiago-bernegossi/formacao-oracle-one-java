@@ -1,6 +1,8 @@
 // Este código-fonte segue a definição completa dos padrões de codificação do Google para a linguagem de programação Java™.
 
-package test;
+package br.com.bytebank.system.test;
+
+import br.com.bytebank.system.model.*;
 
 public class TestingCallStack {
 
@@ -17,7 +19,7 @@ public class TestingCallStack {
 		System.out.println("\nFinal da execução do método main.");
 	}
 
-	private static void firstMethod() throws model.CheckedException {
+	private static void firstMethod() throws CheckedException {
 		System.out.println("Início da execução do método firstMethod.");
 
 		secondMethod();
@@ -25,10 +27,10 @@ public class TestingCallStack {
 		System.out.println("Final da execução do método firstMethod.");
 	}
 
-	private static void secondMethod() throws model.CheckedException {
+	private static void secondMethod() throws CheckedException {
 		System.out.println("Início da execução do método secondMethod.\n");
 
-		throw new model.CheckedException();
+		throw new CheckedException();
 		
 		// System.out.println("Final da execução do método secondMethod.");
 	}

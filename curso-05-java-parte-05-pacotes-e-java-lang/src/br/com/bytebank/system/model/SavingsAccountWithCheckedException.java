@@ -2,8 +2,26 @@
 
 package br.com.bytebank.system.model;
 
+/**
+ * Provê a classe necessária para a instanciação de um objeto do tipo {@code SavingsAccountWithCheckedException}.
+ * 
+ * @author Thiago Bernegossi
+ * @since	 1.0
+ */
 public class SavingsAccountWithCheckedException extends AccountWithCheckedException implements Taxable {
 
+	/**
+	 * Provê o construtor que é invocado quando há a instanciação de um objeto do tipo {@code SavingsAccountWithCheckedException}.
+	 * 
+	 * @param accountNickname
+	 * 				O atributo de classe que armazena o apelido do objeto atual.
+	 * 
+	 * @param accountAgency
+	 * 				O atributo de classe que armazena a agência do objeto atual.
+	 * 
+	 * @param accountNumber
+	 * 				O atributo de classe que armazena o número do objeto atual.
+	 */
 	public SavingsAccountWithCheckedException(String accountNickname, int accountAgency, int accountNumber) {
 		super(accountNickname, accountAgency, accountNumber);
 	}

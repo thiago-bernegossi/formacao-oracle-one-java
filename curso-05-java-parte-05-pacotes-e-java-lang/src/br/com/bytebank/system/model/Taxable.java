@@ -2,6 +2,12 @@
 
 package br.com.bytebank.system.model;
 
+/**
+ * Provê a classe necessária para a instanciação de um objeto do tipo {@code Taxable}.
+ * 
+ * @author Thiago Bernegossi
+ * @since	 1.0
+ */
 public abstract interface Taxable {
 	
 	public abstract double taxAmount();	

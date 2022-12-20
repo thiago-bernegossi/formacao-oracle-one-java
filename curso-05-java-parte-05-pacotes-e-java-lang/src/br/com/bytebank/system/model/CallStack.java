@@ -2,6 +2,12 @@
 
 package br.com.bytebank.system.model;
 
+/**
+ * Provê a classe necessária para a instanciação de um objeto do tipo {@code CallStack}.
+ * 
+ * @author Thiago Bernegossi
+ * @since	 1.0
+ */
 public class CallStack {
 
 	public static void main(String[] args) {

@@ -2,6 +2,12 @@
 
 package br.com.bytebank.system.model;
 
+/**
+ * Provê a classe necessária para a instanciação de um objeto do tipo {@code AccountWithUncheckedException}.
+ * 
+ * @author Thiago Bernegossi
+ * @since	 1.0
+ */
 public abstract class AccountWithUncheckedException {
 
 	private double accountBalance;
@@ -11,6 +17,18 @@ public abstract class AccountWithUncheckedException {
 	private String accountNickname;
 	private static int amountOfBankAccounts;
 
+	/**
+	 * Provê o construtor que é invocado quando há a instanciação de um objeto do tipo {@code AccountWithUncheckedException}.
+	 * 
+	 * @param accountNickname
+	 * 				O atributo de classe que armazena o apelido do objeto atual.
+	 * 
+	 * @param accountAgency
+	 * 				O atributo de classe que armazena a agência do objeto atual.
+	 * 
+	 * @param accountNumber
+	 * 				O atributo de classe que armazena o número do objeto atual.
+	 */
 	public AccountWithUncheckedException(String accountNickname, int accountAgency, int accountNumber) {
 		if (accountNickname == " " || accountNickname == "" || accountAgency != 654321 || accountNumber <= 0) {
 			System.out.println("--- OPERAÇÃO DE ABERTURA DE CONTA ---");
@@ -27,38 +45,92 @@ public abstract class AccountWithUncheckedException {
 		}
 	}
 
+	/**
+	 * Provê o método de classe que obtém o valor do atributo de classe {@code accountBalance} do objeto atual.
+	 * 
+	 * @return this.accountBalance
+	 *         Retorna o valor do atributo de classe {@code accountBalance}.
+	 */
 	public double getAccountBalance() {
 		return this.accountBalance;
 	}
 
+	/**
+	 * Provê o método de classe que obtém o valor do atributo de classe {@code accountAgency} do objeto atual.
+	 * 
+	 * @return this.accountAgency
+	 *         Retorna o valor do atributo de classe {@code accountAgency}.
+	 */
 	public int getAccountAgency() {
 		return this.accountAgency;
 	}
 
+	/**
+	 * Provê o método de classe que obtém o valor do atributo de classe {@code accountNumber} do objeto atual.
+	 * 
+	 * @return this.accountNumber
+	 *         Retorna o valor do atributo de classe {@code accountNumber}.
+	 */
 	public int getAccountNumber() {
 		return this.accountNumber;
 	}
 
+	/**
+	 * Provê o método de classe que obtém o valor do atributo de classe {@code accountClient} do objeto atual.
+	 * 
+	 * @return this.accountClient
+	 *         Retorna o valor do atributo de classe {@code accountClient}.
+	 */
 	public Client getAccountClient() {
 		return this.accountClient;
 	}
 
+	/**
+	 * Provê o método de classe que obtém o valor do atributo de classe {@code accountNickname} do objeto atual.
+	 * 
+	 * @return this.accountNickname
+	 *         Retorna o valor do atributo de classe {@code accountNickname}.
+	 */
 	public String getAccountNickname() {
 		return this.accountNickname;
 	}
 
+	/**
+	 * Provê o método estático que obtém o valor do atributo estático {@code amountOfBankAccounts} de instâncias do tipo {@code AccountWithUncheckedException}.
+	 * 
+	 * @return Account.amountOfBankAccounts
+	 *         Retorna o valor do atributo estático {@code amountOfBankAccounts}.
+	 */
 	public static int getAmountOfBankAccounts() {
 		return AccountWithUncheckedException.amountOfBankAccounts;
 	}
 
+	/**
+	 * Provê o método de classe que define o valor do atributo de classe {@code accountClient} do objeto atual.
+	 * 
+	 * @param accountClient
+	 * 				O parâmetro que refere uma instância de um objeto do tipo {@code Client} e define o valor do atributo de classe {@code accountClient}.
+	 */
 	public void setAccountClient(Client accountClient) {
 		this.accountClient = accountClient;
 	}
 
+	/**
+	 * Provê o método de classe que define o valor do atributo de classe {@code accountNickname} do objeto atual.
+	 * 
+	 * @param accountNickname
+	 * 				O parâmetro que define o valor do atributo de classe {@code accountNickname}.
+	 */
 	public void setAccountNickname(String accountNickname) {
 		this.accountNickname = accountNickname;
 	}
 
+	/**
+	 * Provê o método de classe que define o valor do atributo de classe {@code accountBalance} do objeto atual.
+	 * 
+	 * @param value
+	 * 				O parâmetro que define o valor do atributo de classe {@code accountBalance}.
+	 */
 	public void depositValue(double value) {
 		if (value >= 1) {
 			this.accountBalance += value;
@@ -70,6 +142,15 @@ public abstract class AccountWithUncheckedException {
 		}
 	}
 
+	/**
+	 * Provê o método de classe que define o valor do atributo de classe {@code accountBalance} do objeto atual.
+	 * 
+	 * @param value
+	 * 				O parâmetro que define o valor do atributo de classe {@code accountBalance}.
+	 *
+	 * @param destinationAccount
+	 * 				O parâmetro que refere uma instância de um objeto do tipo {@code Account}.
+	 */
 	public void transferValue(double value, AccountWithUncheckedException destinationAccount) {
 		if (this.accountBalance < value) {
 			System.out.println("\n--- OPERAÇÃO DE TRANSFERÊNCIA ---");
@@ -82,6 +163,12 @@ public abstract class AccountWithUncheckedException {
 		}
 	}
 
+	/**
+	 * Provê o método de classe que define o valor do atributo de classe {@code accountBalance} do objeto atual.
+	 * 
+	 * @param value
+	 * 				O parâmetro que define o valor do atributo de classe {@code accountBalance}.
+	 */
 	public void withdrawValue(double value) {
 		if (this.accountBalance < value) {
 			System.out.println("\n--- OPERAÇÃO DE SAQUE ---");

@@ -2,12 +2,27 @@
 
 package br.com.bytebank.system.model;
 
+/**
+ * Provê a classe necessária para a instanciação de um objeto do tipo {@code UncheckedException}.
+ * 
+ * @author Thiago Bernegossi
+ * @since	 1.0
+ */
 public class UncheckedException extends RuntimeException {
 
+	/**
+	 * Provê o construtor que é invocado quando há a instanciação de um objeto do tipo {@code UncheckedException}.
+	 */
 	public UncheckedException() {
 		super();
 	}
 	
+	/**
+	 * Provê o construtor que é invocado quando há a instanciação de um objeto do tipo {@code UncheckedException}.
+	 * 
+	 * @param message
+	 * 				O parâmetro que define o valor do atributo de classe {@code detailMessage}.
+	 */
 	public UncheckedException(String message) {
 		super(message);
 	}

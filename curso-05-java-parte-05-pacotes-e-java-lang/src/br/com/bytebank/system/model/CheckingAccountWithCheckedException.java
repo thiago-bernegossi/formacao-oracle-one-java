@@ -32,6 +32,11 @@ public class CheckingAccountWithCheckedException extends AccountWithCheckedExcep
 	}
 	
 	@Override
+	public String toString() {
+		return "--- OPERAÇÃO DE ANÁLISE DE CONTA --- \n" + super.toString() + "Obs.: Conta do Tipo Corrente.\n";
+	}
+	
+	@Override
 	public void transferValue(double value, AccountWithCheckedException destinationAccount) throws CheckedException {
 		double newValue = value + 0.10;
 		super.transferValue(newValue, destinationAccount);

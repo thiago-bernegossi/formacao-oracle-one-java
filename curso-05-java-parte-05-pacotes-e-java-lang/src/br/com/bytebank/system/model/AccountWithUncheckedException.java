@@ -124,6 +124,13 @@ public abstract class AccountWithUncheckedException {
 	public void setAccountNickname(String accountNickname) {
 		this.accountNickname = accountNickname;
 	}
+	
+	@Override
+	public String toString() {
+		return "O apelido da conta é " + this.getAccountNickname() + ".\n"
+					 + "A agência da " + this.getAccountNickname() + " é " +	this.accountAgency + ".\n"
+					 + "O número da " + this.getAccountNickname() + " é " + this.getAccountNumber() + ".\n";
+	}
 
 	/**
 	 * Provê o método de classe que define o valor do atributo de classe {@code accountBalance} do objeto atual.

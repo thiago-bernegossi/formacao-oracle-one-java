@@ -2,7 +2,7 @@
 
 package br.com.bytebank.system.test;
 
-public class TestingArray {
+public class TestingArrayWithPrimitiveDataType {
 
 	public static void main(String[] args) {
 		System.out.println("***** Olá! Seja muito bem-vindo(a) ao ByteBank! *****\n");

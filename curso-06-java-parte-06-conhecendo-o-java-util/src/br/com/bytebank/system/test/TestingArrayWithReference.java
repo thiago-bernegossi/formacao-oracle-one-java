@@ -2,26 +2,28 @@
 
 package br.com.bytebank.system.test;
 
+import br.com.bytebank.system.model.Account;
 import br.com.bytebank.system.model.CheckingAccount;
+import br.com.bytebank.system.model.SavingsAccount;
 
 public class TestingArrayWithReference {
 
 	public static void main(String[] args) {
 		System.out.println("***** Olá! Seja muito bem-vindo(a) ao ByteBank! *****\n");
 		
-		CheckingAccount[] checkingAccounts = new CheckingAccount[2];
+		Object[] references = new Object[2];
 		
 		CheckingAccount firstAccount = new CheckingAccount("Primeira Conta", 654321, 123456789);
 		
-		checkingAccounts[0] = firstAccount;
-		System.out.println(checkingAccounts[0].toString());
+		references[0] = firstAccount;
+		System.out.println(references[0].toString());
 		
-		CheckingAccount secondAccount = new CheckingAccount("Segunda Conta", 654321, 234567891);
+		SavingsAccount secondAccount = new SavingsAccount("Segunda Conta", 654321, 234567891);
 		
-		checkingAccounts[1] = secondAccount;
-		System.out.println(checkingAccounts[1].toString());
+		references[1] = secondAccount;
+		System.out.println(references[1].toString());
 		
-		System.out.println("Obs.: A quantidade de contas abertas no ByteBank é " + (CheckingAccount.getAmountOfBankAccounts()) + ".");
+		System.out.println("Obs.: A quantidade de contas abertas no ByteBank é " + (Account.getAmountOfBankAccounts()) +  ".");
 
 		System.out.println("\n***** Obrigado(a) por utilizar nossos serviços. *****");
 	}

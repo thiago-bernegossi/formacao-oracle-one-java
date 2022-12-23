@@ -13,7 +13,7 @@ public class TestingArrayList {
 	public static void main(String[] args) {
 		System.out.println("***** Olá! Seja muito bem-vindo(a) ao ByteBank! *****\n");
 		
-		ArrayList arrayList = new ArrayList();
+		ArrayList<Account> arrayList = new ArrayList<Account>();
 		
 		CheckingAccount firstAccount = new CheckingAccount("Primeira Conta", 654321, 123456789);
 		arrayList.add(firstAccount);
@@ -45,7 +45,7 @@ public class TestingArrayList {
 		 * System.out.println(arrayList.get(counter)); }
 		 */
 		
-		for (Object account : arrayList) {
+		for (Account account : arrayList) {
 			System.out.println(account);
 		}
 		

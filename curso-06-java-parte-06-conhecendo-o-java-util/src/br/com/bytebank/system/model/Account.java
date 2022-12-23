@@ -126,9 +126,29 @@ public abstract class Account {
 	}
 	
 	@Override
+	public boolean equals(Object obj) {
+		Account account = (Account) obj;
+		if (this.getAccountNickname() == account.getAccountNickname()
+				&& this.getAccountAgency() == account.getAccountAgency()
+				&& this.getAccountNumber() == account.getAccountNumber()) {
+			System.out.println("--- OPERAÇÃO DE COMPARAÇÃO DE CONTAS ---");
+			System.out.println("A operação de comparação de contas fora realizada.");
+			System.out.println("Os parâmetros (apelido, agência e número) foram analizados.");
+			System.out.println("Ob.: Os parâmetros das contas são iguais.\n");
+			return true;
+		} else {
+			System.out.println("--- OPERAÇÃO DE COMPARAÇÃO DE CONTAS ---");
+			System.out.println("A operação de comparação de contas fora realizada.");
+			System.out.println("Os parâmetros (apelido, agência e número) foram analizados.");
+			System.out.println("Obs.: Os parâmetros das contas não são iguais.\n");
+			return false;
+		}
+	}
+	
+	@Override
 	public String toString() {
 		return "O apelido da conta é " + this.getAccountNickname() + ".\n"
-					 + "A agência da " + this.getAccountNickname() + " é " +	this.accountAgency + ".\n"
+					 + "A agência da " + this.getAccountNickname() + " é " +	this.getAccountAgency() + ".\n"
 					 + "O número da " + this.getAccountNickname() + " é " + this.getAccountNumber() + ".\n";
 	}
 

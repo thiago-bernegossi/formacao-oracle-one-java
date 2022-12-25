@@ -2,18 +2,18 @@
 
 package br.com.bytebank.system.test.util;
 
-import java.util.LinkedList;
 import java.util.List;
+import java.util.Vector;
 
 import br.com.bytebank.system.model.Account;
 import br.com.bytebank.system.model.CheckingAccount;
 import br.com.bytebank.system.model.SavingsAccount;
 
-public class TestingLinkedList {
+public class TestingVector {
 
 	public static void main(String[] args) {
 		System.out.println("***** Olá! Seja muito bem-vindo(a) ao ByteBank! *****\n");
-		List<Account> linkedList = new LinkedList<Account>();
+		List<Account> linkedList = new Vector<Account>();
 		
 		CheckingAccount firstAccount = new CheckingAccount("Primeira Conta", 654321, 123456789);
 		linkedList.add(firstAccount);

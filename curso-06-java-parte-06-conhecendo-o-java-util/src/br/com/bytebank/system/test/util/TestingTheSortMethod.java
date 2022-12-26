@@ -8,6 +8,8 @@ import java.util.List;
 import br.com.bytebank.system.model.Account;
 import br.com.bytebank.system.model.AccountNumberComparator;
 import br.com.bytebank.system.model.CheckingAccount;
+import br.com.bytebank.system.model.Client;
+import br.com.bytebank.system.model.ClientNameComparator;
 import br.com.bytebank.system.model.SavingsAccount;
 
 public class TestingTheSortMethod {
@@ -18,15 +20,27 @@ public class TestingTheSortMethod {
 		List<Account> accounts = new ArrayList<Account>();
 		
 		SavingsAccount fourthAccount = new SavingsAccount("Quarta Conta", 654321, 456789123);
+		Client fourthClient = new Client();
+		fourthClient.setClientName("Raphael");
+		fourthAccount.setAccountClient(fourthClient);
 		accounts.add(fourthAccount);
 		
 		CheckingAccount firstAccount = new CheckingAccount("Primeira Conta", 654321, 123456789);
+		Client firstClient = new Client();
+		firstClient.setClientName("Donatello");
+		firstAccount.setAccountClient(firstClient);
 		accounts.add(firstAccount);
 		
 		CheckingAccount thirdAccount = new CheckingAccount("Terceira Conta", 654321, 345678912);
+		Client thirdClient = new Client();
+		thirdClient.setClientName("Michelangelo");
+		thirdAccount.setAccountClient(thirdClient);
 		accounts.add(thirdAccount);
 		
 		SavingsAccount secondAccount = new SavingsAccount("Segunda Conta", 654321, 234567891);
+		Client secondClient = new Client();
+		secondClient.setClientName("Leonardo");
+		secondAccount.setAccountClient(secondClient);
 		accounts.add(secondAccount);
 		
 		System.out.println("Obs.: Extrato de contas sem a ordenação numérica.\n");
@@ -36,11 +50,22 @@ public class TestingTheSortMethod {
 		}
 		
 		System.out.println("Obs.: Extrato de contas com a ordenação numérica.\n");
-
-		AccountNumberComparator accountNumberComparator = new AccountNumberComparator();
-		accounts.sort(accountNumberComparator);
+		
+	  AccountNumberComparator accountNumberComparator = new AccountNumberComparator();
+	  accounts.sort(accountNumberComparator);
+	  
+	  for(Account account : accounts) {
+	  	System.out.println(account.toString());
+	  }
+	 
+		System.out.println("Obs.: Extrato de contas com a ordenação alfabética.\n");
+		
+		ClientNameComparator clientNameComparator = new ClientNameComparator();
+		accounts.sort(clientNameComparator);
 		
 		for(Account account : accounts) {
+			System.out.println("--- OPERAÇÃO DE ANÁLISE DE CONTA ---");
+			System.out.println("O nome do titular da " + account.getAccountNickname() + " é " + account.getAccountClient().getClientName() + ".\n");	
 			System.out.println(account.toString());
 		}
 		

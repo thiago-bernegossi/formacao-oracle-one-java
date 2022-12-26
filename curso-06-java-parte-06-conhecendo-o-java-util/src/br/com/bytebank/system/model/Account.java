@@ -134,7 +134,7 @@ public abstract class Account implements Comparable<Account> {
 			System.out.println("--- OPERAÇÃO DE COMPARAÇÃO DE CONTAS ---");
 			System.out.println("A operação de comparação de contas fora realizada.");
 			System.out.println("Os parâmetros (apelido, agência e número) foram analizados.");
-			System.out.println("Ob.: Os parâmetros das contas são iguais.\n");
+			System.out.println("Obs.: Os parâmetros das contas são iguais.\n");
 			return true;
 		} else {
 			System.out.println("--- OPERAÇÃO DE COMPARAÇÃO DE CONTAS ---");

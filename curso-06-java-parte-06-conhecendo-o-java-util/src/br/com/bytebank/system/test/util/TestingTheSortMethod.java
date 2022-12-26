@@ -3,6 +3,7 @@
 package br.com.bytebank.system.test.util;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import br.com.bytebank.system.model.Account;
@@ -43,25 +44,15 @@ public class TestingTheSortMethod {
 		secondAccount.setAccountClient(secondClient);
 		accounts.add(secondAccount);
 		
-		System.out.println("Obs.: Extrato de contas sem a ordenação numérica.\n");
+		System.out.println("Obs.: Extrato de contas sem a ordenação alfabética ou numérica.\n");
 		
 		for(Account account : accounts) {
 			System.out.println(account.toString());
 		}
 		
-		System.out.println("Obs.: Extrato de contas com a ordenação numérica.\n");
-		
-	  AccountNumberComparator accountNumberComparator = new AccountNumberComparator();
-	  accounts.sort(accountNumberComparator);
-	  
-	  for(Account account : accounts) {
-	  	System.out.println(account.toString());
-	  }
-	 
 		System.out.println("Obs.: Extrato de contas com a ordenação alfabética.\n");
 		
-		ClientNameComparator clientNameComparator = new ClientNameComparator();
-		accounts.sort(clientNameComparator);
+		accounts.sort(new ClientNameComparator());
 		
 		for(Account account : accounts) {
 			System.out.println("--- OPERAÇÃO DE ANÁLISE DE CONTA ---");
@@ -69,6 +60,22 @@ public class TestingTheSortMethod {
 			System.out.println(account.toString());
 		}
 		
+		System.out.println("Obs.: Extrato de contas com a ordenação numérica.\n");
+		
+	  accounts.sort(new AccountNumberComparator());
+	  
+	  for(Account account : accounts) {
+	  	System.out.println(account.toString());
+	  }
+	  
+		System.out.println("Obs.: Extrato de contas com a ordenação numérica (ordem natural).\n");
+		
+	  Collections.sort(accounts);
+	  
+	  for(Account account : accounts) {
+	  	System.out.println(account.toString());
+	  }
+	 
 		System.out.println("Obs.: A quantidade de contas armazenadas no array é " + accounts.size() + ".\n");
 		
 		System.out.println("Obs.: A quantidade de contas abertas no ByteBank é " + (Account.getAmountOfBankAccounts()) + ".");

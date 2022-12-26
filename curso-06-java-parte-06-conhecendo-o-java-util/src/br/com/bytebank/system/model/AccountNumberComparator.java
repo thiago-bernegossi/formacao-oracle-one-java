@@ -14,12 +14,6 @@ public class AccountNumberComparator implements Comparator<Account> {
 
 	@Override
 	public int compare(Account firstAccount, Account secondAccount) {
-		if (firstAccount.getAccountNumber() < secondAccount.getAccountNumber()) {
-			return -1;
-		} else if (firstAccount.getAccountNumber() > secondAccount.getAccountNumber()) {
-			return 1;
-		} else {
-			return 0;
-		}
+		return Integer.compare(firstAccount.getAccountNumber(), secondAccount.getAccountNumber());
 	}
 }

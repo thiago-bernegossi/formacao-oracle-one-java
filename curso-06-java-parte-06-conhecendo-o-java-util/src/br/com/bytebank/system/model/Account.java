@@ -8,7 +8,7 @@ package br.com.bytebank.system.model;
  * @author Thiago Bernegossi
  * @since	 1.0
  */
-public abstract class Account {
+public abstract class Account implements Comparable<Account> {
 
 	private double accountBalance;
 	private int accountAgency;
@@ -143,6 +143,11 @@ public abstract class Account {
 			System.out.println("Obs.: Os parâmetros das contas não são iguais.\n");
 			return false;
 		}
+	}
+	
+	@Override
+	public int compareTo(Account account) {
+		return Double.compare(this.accountNumber, account.accountNumber);
 	}
 	
 	@Override

@@ -8,20 +8,12 @@ import java.util.List;
 public class TestingAutoboxingAndUnboxing {
 
 	public static void main(String[] args) {
-		System.out.println("A-) O valor mínimo cabível em um Integer é " + Integer.MIN_VALUE + ".\n");
-		
-		System.out.println("B-) O valor máximo cabível em um Integer é " + Integer.MAX_VALUE + ".\n");
-		
-		System.out.println("C-) O número de bits utilizado para representar um Integer é " + Integer.SIZE + ".\n");
-		
-		System.out.println("D-) O número de bytes utilizado para representar um Integer é " + Integer.BYTES + ".\n");
-		
 		int userAge = 25;
-		System.out.println("E-) A idade do usuário é " + userAge + " anos.\n");
-		
-		Integer value = Integer.valueOf(userAge); // Processo de Autoboxing.
-		System.out.println("F-) A idade do usuário é " + value.doubleValue() + " anos.\n");
-		
-		int newValue = value.intValue(); // Processo de Unboxing.
+
+		Integer newUserAge = new Integer(userAge);
+		List<Integer> list = new ArrayList<Integer>();
+
+		list.add(newUserAge);
+		System.out.println("A-) A idade do usuário é " + list.get(0) + " anos;");
 	}
 }

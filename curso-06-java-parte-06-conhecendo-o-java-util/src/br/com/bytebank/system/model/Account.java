@@ -147,7 +147,7 @@ public abstract class Account implements Comparable<Account> {
 	
 	@Override
 	public int compareTo(Account account) {
-		return Double.compare(this.accountNumber, account.accountNumber);
+		return Integer.compare(this.accountNumber, account.accountNumber);
 	}
 	
 	@Override

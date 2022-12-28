@@ -13,12 +13,12 @@ public class TestingInputStreamWithFile {
 
 	public static void main(String[] args) throws IOException {
 		// Processo de Fluxo de Entrada de Dados com Arquivo.
-		InputStream fileInputStream = new FileInputStream("lorem.txt"); // Início do Padrão de Projeto Decorator.
+		InputStream fileInputStream = new FileInputStream("input.txt"); // Início do Padrão de Projeto Decorator.
 		Reader inputStreamReader = new InputStreamReader(fileInputStream);
 		BufferedReader bufferedReader = new BufferedReader(inputStreamReader); // Final do Padrão de Projeto Decorator.
 		
 		String firstLine = bufferedReader.readLine();
-		System.out.println("O conteúdo da primeira linha do texto é: \n" + firstLine);
+		System.out.println(firstLine);
 		
 		bufferedReader.close();
 	}

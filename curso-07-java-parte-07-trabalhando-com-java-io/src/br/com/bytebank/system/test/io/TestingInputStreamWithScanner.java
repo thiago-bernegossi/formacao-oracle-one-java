@@ -15,7 +15,7 @@ public class TestingInputStreamWithScanner {
 		
 		while (scanner.hasNextLine()) {
 			String line = scanner.nextLine();
-			System.out.println(line);
+			// System.out.println(line);
 			
 			Scanner lineScanner = new Scanner(line);
 			lineScanner.useLocale(Locale.US);
@@ -25,8 +25,8 @@ public class TestingInputStreamWithScanner {
 			int secondValue = lineScanner.nextInt();
 			int thirdValue = lineScanner.nextInt();
 			
-			System.out.println(firstValue + secondValue + thirdValue + System.lineSeparator());
-		
+			System.out.format(new Locale("pt", "BR"), "%s, %d, %d%n", firstValue, secondValue, thirdValue);
+			
 			lineScanner.close();
 			
 		  // String[] values = line.split(", ");

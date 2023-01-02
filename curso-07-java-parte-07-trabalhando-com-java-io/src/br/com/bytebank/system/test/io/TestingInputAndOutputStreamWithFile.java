@@ -19,12 +19,12 @@ public class TestingInputAndOutputStreamWithFile {
 	public static void main(String[] args) throws IOException {
 		// Processo de Fluxo de Entrada de Dados com Arquivo.
 		InputStream fileInputStream = new FileInputStream("input.txt"); // Início do Padrão de Projeto Decorator.
-		Reader inputStreamReader = new InputStreamReader(fileInputStream);
+		Reader inputStreamReader = new InputStreamReader(fileInputStream, "UTF-8");
 		BufferedReader bufferedReader = new BufferedReader(inputStreamReader); // Final do Padrão de Projeto Decorator.
 
 		// Processo de Fluxo de Saída de Dados com Arquivo.
 		OutputStream fileOutputStream = new FileOutputStream("output.txt"); // Início do Padrão de Projeto Decorator.
-		Writer outputStreamWriter = new OutputStreamWriter(fileOutputStream);
+		Writer outputStreamWriter = new OutputStreamWriter(fileOutputStream, "UTF-8");
 		BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter); // Final do Padrão de Projeto Decorator.
 		
 		String line = bufferedReader.readLine();

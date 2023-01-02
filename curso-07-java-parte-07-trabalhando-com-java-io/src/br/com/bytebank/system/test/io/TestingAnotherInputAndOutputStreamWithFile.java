@@ -17,12 +17,12 @@ public class TestingAnotherInputAndOutputStreamWithFile {
 	public static void main(String[] args) throws IOException {
 		// Processo de Fluxo de Entrada de Dados com Teclado.
 		InputStream inputStream = System.in;// Início do Padrão de Projeto Decorator.
-		Reader inputStreamReader = new InputStreamReader(inputStream);
+		Reader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
 		BufferedReader bufferedReader = new BufferedReader(inputStreamReader); // Final do Padrão de Projeto Decorator.
 		
 		// Processo de Fluxo de Saída de Dados com Display.
 		OutputStream outputStream = System.out; // Início do Padrão de Projeto Decorator.
-		Writer outputStreamWriter = new OutputStreamWriter(outputStream);
+		Writer outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-8");
 		BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter); // Final do Padrão de Projeto Decorator.
 		
 		String line = bufferedReader.readLine();

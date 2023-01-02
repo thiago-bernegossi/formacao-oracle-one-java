@@ -14,7 +14,7 @@ public class TestingInputStreamWithFile {
 	public static void main(String[] args) throws IOException {
 		// Processo de Fluxo de Entrada de Dados com Arquivo.
 		InputStream fileInputStream = new FileInputStream("input.txt"); // Início do Padrão de Projeto Decorator.
-		Reader inputStreamReader = new InputStreamReader(fileInputStream);
+		Reader inputStreamReader = new InputStreamReader(fileInputStream, "UTF-8");
 		BufferedReader bufferedReader = new BufferedReader(inputStreamReader); // Final do Padrão de Projeto Decorator.
 		
 		String firstLine = bufferedReader.readLine();

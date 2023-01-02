@@ -2,24 +2,25 @@
 
 package br.com.bytebank.system.test.io;
 
-import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
+
+import br.com.bytebank.system.model.CheckingAccount;
+import br.com.bytebank.system.model.Client;
 
 public class TestingSerialization {
 
-	public static void main(String[] args) throws Exception {
-		String message = "Olá, Mundo!";
-		
-		ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("message.txt"));
-		objectOutputStream.writeObject(message);
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		CheckingAccount firstCheckingAccount = new CheckingAccount("Primeira Conta", 654321, 123456789);
+		Client firstClient = new Client();
+		firstCheckingAccount.setAccountClient(firstClient);
+		firstClient.setClientName("Donatello");
+		firstClient.setClientItr("111.111.111-11");
+				
+		ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("account.txt"));
+		objectOutputStream.writeObject(firstCheckingAccount);
 		objectOutputStream.close();
-	
-	  ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("message.txt"));
-	  String newMessage = (String) objectInputStream.readObject();
-	  objectInputStream.close();
-	  
-	  System.out.println("A mensagem é: " + newMessage);
 	}
 }

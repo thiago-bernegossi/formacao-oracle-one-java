@@ -10,20 +10,19 @@ package br.com.bytebank.learn.model;
  */
 public class Course implements Comparable<Course> {
 	
-	public double runtime;
-	public String title;
+	private double runtime;
+	private String title;
 	
 	/**
 	 * Provê o construtor que é invocado quando há a instanciação de um objeto do tipo {@code Course}.
 	 * 
 	 * @param title
-	 * 				O atributo de classe que armazena o título do objeto atual.
+	 * 				O parâmetro que define o valor do atributo de classe {@code title}.
 	 * 
 	 * @param runtime
-	 * 				O atributo de classe que armazena o tempo de execução do objeto atual.
+	 * 				O parâmetro que define o valor do atributo de classe {@code runtime}.
 	 */
 	public Course(String title, int runtime) {
-		super();
 		this.runtime = runtime;
 		this.title = title;
 	}

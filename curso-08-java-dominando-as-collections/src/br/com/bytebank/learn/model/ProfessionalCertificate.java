@@ -33,6 +33,16 @@ public class ProfessionalCertificate {
 	}
 
 	/**
+	 * Provê o método que obtém o valor total do atributo {@code durationOfTheCourse} de instâncias do tipo {@code Course}.
+	 * 
+	 * @return durationOfTheCourse
+	 *         Retorna o valor total do atributo {@code durationOfTheCourse} de instâncias do tipo {@code Course}.
+	 */
+	public double getDurationOfTheProfessionalCertificate() {
+		return this.courses.stream().mapToDouble(Course::getDurationOfTheCourse).sum();
+	}
+	
+	/**
 	 * Provê o método de classe que obtém o valor do atributo de classe {@code courses} do objeto atual.
 	 * 
 	 * @return this.courses
@@ -60,6 +70,11 @@ public class ProfessionalCertificate {
 	 */
 	public String getTitle() {
 		return this.title;
+	}
+	
+	@Override
+	public String toString() {
+		return "[Certificado Profissional: " + this.getTitle() + "; " + "Duração: " + this.getDurationOfTheProfessionalCertificate() + " minutos.]"; 
 	}
 
 	/**

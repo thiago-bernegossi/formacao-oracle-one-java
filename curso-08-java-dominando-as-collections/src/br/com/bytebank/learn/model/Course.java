@@ -10,7 +10,7 @@ package br.com.bytebank.learn.model;
  */
 public class Course implements Comparable<Course> {
 	
-	private double runtime;
+	private double durationOfTheCourse;
 	private String title;
 	
 	/**
@@ -19,22 +19,22 @@ public class Course implements Comparable<Course> {
 	 * @param title
 	 * 				O parâmetro que define o valor do atributo de classe {@code title}.
 	 * 
-	 * @param runtime
-	 * 				O parâmetro que define o valor do atributo de classe {@code runtime}.
+	 * @param durationOfTheCourse
+	 * 				O parâmetro que define o valor do atributo de classe {@code durationOfTheCourse}.
 	 */
-	public Course(String title, int runtime) {
-		this.runtime = runtime;
+	public Course(String title, double durationOfTheCourse) {
+		this.durationOfTheCourse = durationOfTheCourse;
 		this.title = title;
 	}
 	
 	/**
-	 * Provê o método de classe que obtém o valor do atributo de classe {@code runtime} do objeto atual.
+	 * Provê o método de classe que obtém o valor do atributo de classe {@code durationOfTheCourse} do objeto atual.
 	 * 
-	 * @return this.runtime
-	 *         Retorna o valor do atributo de classe {@code runtime}.
+	 * @return this.durationOfTheCourse
+	 *         Retorna o valor do atributo de classe {@code durationOfTheCourse}.
 	 */
-	public double getRuntime() {
-		return this.runtime;
+	public double getDurationOfTheCourse() {
+		return this.durationOfTheCourse;
 	}
 	
 	/**
@@ -54,6 +54,6 @@ public class Course implements Comparable<Course> {
 	
 	@Override
 	public String toString() {
-		return "[Curso: " + this.getTitle() + "; " + "Duração: " + this.getRuntime() + " minutos.]"; 
+		return "[Curso: " + this.getTitle() + "; " + "Duração: " + this.getDurationOfTheCourse() + " minutos.]"; 
 	}
 }

@@ -33,12 +33,12 @@ public class TestingCourseList {
 		System.out.println(courses);
 		
 		// Processo de ordenação numérica.
-		Collections.sort(courses, Comparator.comparing(Course::getRuntime));
+		Collections.sort(courses, Comparator.comparing(Course::getDurationOfTheCourse));
 		
 		System.out.println(courses);
 		
 		// Processo de ordenação numérica.
-		courses.sort(Comparator.comparing(Course::getRuntime));
+		courses.sort(Comparator.comparing(Course::getDurationOfTheCourse));
 		
 		System.out.println(courses);
 	}

@@ -38,7 +38,7 @@ public class ProfessionalCertificate {
 	/**
 	 * Provê o método que obtém o valor total do atributo {@code durationOfTheCourse} de instâncias do tipo {@code Course}.
 	 * 
-	 * @return durationOfTheCourse
+	 * @return this.courses.stream().mapToDouble(Course::getDurationOfTheCourse).sum()
 	 *         Retorna o valor total do atributo {@code durationOfTheCourse} de instâncias do tipo {@code Course}.
 	 */
 	public double getDurationOfTheProfessionalCertificate() {
@@ -48,7 +48,7 @@ public class ProfessionalCertificate {
 	/**
 	 * Provê o método de classe que obtém o valor do atributo de classe {@code courses} do objeto atual.
 	 * 
-	 * @return this.courses
+	 * @return Collections.unmodifiableList(courses)
 	 *         Retorna o valor do atributo de classe {@code courses}.
 	 */
 	public List<Course> getCourses() {
@@ -58,7 +58,7 @@ public class ProfessionalCertificate {
 	/**
 	 * Provê o método de classe que obtém o valor do atributo de classe {@code students} do objeto atual.
 	 * 
-	 * @return this.students
+	 * @return Collections.unmodifiableSet(students)
 	 *         Retorna o valor do atributo de classe {@code students}.
 	 */
 	public Set<Student> getStudents() {
@@ -83,6 +83,19 @@ public class ProfessionalCertificate {
 	 */
 	public String getTitle() {
 		return this.title;
+	}
+	
+	/**
+	 * Provê o método de classe que obtém o valor do atributo de classe {@code student} do objeto atual.
+	 * 
+	 * @param student
+	 * 				O parâmetro que define o valor do atributo de classe {@code student}.
+	 * 
+	 * @return this.students.contains(student)
+	 *         Retorna o valor do atributo de classe {@code students} em comparação a outro valor do atributo de classe {@code students}.
+	 */
+	public boolean search(Student student) {
+		return this.students.contains(student);
 	}
 	
 	/**

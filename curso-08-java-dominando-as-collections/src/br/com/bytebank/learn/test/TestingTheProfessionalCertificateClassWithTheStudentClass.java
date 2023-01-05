@@ -31,5 +31,18 @@ public class TestingTheProfessionalCertificateClassWithTheStudentClass {
 		professionalCertificateInFinance.getStudents().forEach(student -> {
 			System.out.println(student);
 		});
+		
+		System.out.println();
+		
+		System.out.println("B-) O aluno Donatello está matriculado: " + professionalCertificateInFinance.search(firstStudent) + ".\n"); 
+	
+		Student anotherStudent = new Student("Donatello", 123456);
+		System.out.println("C-) O aluno Donatello está matriculado: " + professionalCertificateInFinance.search(anotherStudent) + ".\n"); 
+	
+		// Processo de Comparação de Dados com o Método equals().
+		System.out.println("D-) O aluno Donatello está matriculado: " + firstStudent.equals(anotherStudent) + ".\n"); 
+
+		// Processo de Comparação de Dados com o Método hashCode().
+		System.out.println("E-) Há dois alunos matriculados que contém os mesmos dados: " + (firstStudent.hashCode() == anotherStudent.hashCode()) + ".");
 	}
 }

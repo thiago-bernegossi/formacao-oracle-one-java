@@ -48,6 +48,17 @@ public class Student {
 	}
 	
 	@Override
+	public boolean equals(Object obj) {
+		Student anotherStudent = (Student) obj;
+		return this.getName().equals(anotherStudent.getName());
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.getName().hashCode();
+	}
+	
+	@Override
 	public String toString() {
 		return "[Aluno: " + this.getName() + "; " + "Matrícula: " + this.getRegistration() + ".]"; 
 	}

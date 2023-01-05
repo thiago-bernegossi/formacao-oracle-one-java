@@ -4,7 +4,9 @@ package br.com.bytebank.learn.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Provê a classe necessária para a instanciação de um objeto do tipo {@code ProfessionalCertificate}.
@@ -15,6 +17,7 @@ import java.util.List;
 public class ProfessionalCertificate {
 
 	private List<Course> courses = new ArrayList<Course>();
+	private Set<Student> students = new HashSet<Student>();
 	private String instructor;
 	private String title;
 
@@ -51,6 +54,16 @@ public class ProfessionalCertificate {
 	public List<Course> getCourses() {
 		return Collections.unmodifiableList(courses);
 	}
+	
+	/**
+	 * Provê o método de classe que obtém o valor do atributo de classe {@code students} do objeto atual.
+	 * 
+	 * @return this.students
+	 *         Retorna o valor do atributo de classe {@code students}.
+	 */
+	public Set<Student> getStudents() {
+		return Collections.unmodifiableSet(students);
+	}
 
 	/**
 	 * Provê o método de classe que obtém o valor do atributo de classe {@code instructor} do objeto atual.
@@ -72,18 +85,28 @@ public class ProfessionalCertificate {
 		return this.title;
 	}
 	
-	@Override
-	public String toString() {
-		return "[Certificado Profissional: " + this.getTitle() + "; " + "Duração: " + this.getDurationOfTheProfessionalCertificate() + " minutos.]"; 
-	}
-
 	/**
-	 * Provê o método de classe que define o valor do atributo de classe {@code course} do objeto atual.
+	 * Provê o método de classe que define o valor do atributo de classe {@code courses} do objeto atual.
 	 * 
 	 * @param course
-	 * 				O parâmetro que define o valor do atributo de classe {@code course}.
+	 * 				O parâmetro que define o valor do atributo de classe {@code courses}.
 	 */
 	public void add(Course course) {
 		this.courses.add(course);
+	}
+	
+	/**
+	 * Provê o método de classe que define o valor do atributo de classe {@code students} do objeto atual.
+	 * 
+	 * @param student
+	 * 				O parâmetro que define o valor do atributo de classe {@code students}.
+	 */
+	public void register(Student student) {
+		this.students.add(student);
+	}
+	
+	@Override
+	public String toString() {
+		return "[Certificado Profissional: " + this.getTitle() + "; " + "Duração: " + this.getDurationOfTheProfessionalCertificate() + " minutos.]"; 
 	}
 }

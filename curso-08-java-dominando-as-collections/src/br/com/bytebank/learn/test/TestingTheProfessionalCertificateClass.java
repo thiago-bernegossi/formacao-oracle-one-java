@@ -9,7 +9,7 @@ import java.util.List;
 import br.com.bytebank.learn.model.Course;
 import br.com.bytebank.learn.model.ProfessionalCertificate;
 
-public class TestingProfessionalCertificate {
+public class TestingTheProfessionalCertificateClass {
 
 	public static void main(String[] args) {
 		ProfessionalCertificate professionalCertificateInFinance = new ProfessionalCertificate("Finanças", "Donatello");

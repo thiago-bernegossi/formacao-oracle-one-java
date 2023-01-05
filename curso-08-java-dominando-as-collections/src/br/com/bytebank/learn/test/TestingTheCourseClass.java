@@ -8,7 +8,7 @@ import java.util.Comparator;
 
 import br.com.bytebank.learn.model.Course;
 
-public class TestingCourseList {
+public class TestingTheCourseClass {
 
 	public static void main(String[] args) {
 		ArrayList<Course> courses = new ArrayList<Course>();

@@ -21,10 +21,10 @@ public class TestingTheProfessionalCertificateClassWithTheStudentClass {
 		Student thirdStudent = new Student("Michelangelo", 345612);
 		Student fourthStudent = new Student("Raphael", 456123);
 		
-		professionalCertificateInFinance.register(firstStudent);
-		professionalCertificateInFinance.register(secondStudent);
-		professionalCertificateInFinance.register(thirdStudent);
-		professionalCertificateInFinance.register(fourthStudent);
+		professionalCertificateInFinance.isRegistered(firstStudent);
+		professionalCertificateInFinance.isRegistered(secondStudent);
+		professionalCertificateInFinance.isRegistered(thirdStudent);
+		professionalCertificateInFinance.isRegistered(fourthStudent);
 		
 		System.out.println("A-) Os alunos matriculados são:");
 		

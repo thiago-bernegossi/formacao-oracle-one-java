@@ -2,14 +2,11 @@
 
 package br.com.bytebank.learn.test;
 
-import java.util.Iterator;
-import java.util.Set;
-
 import br.com.bytebank.learn.model.Course;
 import br.com.bytebank.learn.model.ProfessionalCertificate;
 import br.com.bytebank.learn.model.Student;
 
-public class TestingTheIteratorMethod {
+public class TestingTheInterfaceMap {
 
 	public static void main(String[] args) {
 		ProfessionalCertificate professionalCertificateInFinance = new ProfessionalCertificate("Finanças", "Paollo");
@@ -29,14 +26,7 @@ public class TestingTheIteratorMethod {
 		professionalCertificateInFinance.isRegistered(thirdStudent);
 		professionalCertificateInFinance.isRegistered(fourthStudent);
 		
-		Set<Student> students = professionalCertificateInFinance.getStudents();
-		Iterator<Student> iterator = students.iterator();
-		
-		System.out.println("A-) Os alunos matriculados são:");
-		
-		while (iterator.hasNext()) {
-			Student student = iterator.next();
-			System.out.println(student);
-		}
+		Student student = professionalCertificateInFinance.searchRegistered(456123);
+		System.out.println("Dados da Matrícula: " + student);
 	}
 }

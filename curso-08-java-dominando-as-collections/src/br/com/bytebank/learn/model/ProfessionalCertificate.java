@@ -4,8 +4,11 @@ package br.com.bytebank.learn.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 /**
@@ -17,6 +20,7 @@ import java.util.Set;
 public class ProfessionalCertificate {
 
 	private List<Course> courses = new ArrayList<Course>();
+	private Map<Integer, Student> registerTheStudent = new HashMap<Integer, Student>();
 	private Set<Student> students = new HashSet<Student>();
 	private String instructor;
 	private String title;
@@ -86,10 +90,10 @@ public class ProfessionalCertificate {
 	}
 	
 	/**
-	 * Provê o método de classe que obtém o valor do atributo de classe {@code student} do objeto atual.
+	 * Provê o método de classe que obtém o valor do atributo de classe {@code students} do objeto atual.
 	 * 
 	 * @param student
-	 * 				O parâmetro que define o valor do atributo de classe {@code student}.
+	 * 				O parâmetro que refere uma instância de um objeto do tipo {@code Student} e define o valor do atributo de classe {@code students}.
 	 * 
 	 * @return this.students.contains(student)
 	 *         Retorna o valor do atributo de classe {@code students} em comparação a outro valor do atributo de classe {@code students}.
@@ -102,7 +106,7 @@ public class ProfessionalCertificate {
 	 * Provê o método de classe que define o valor do atributo de classe {@code courses} do objeto atual.
 	 * 
 	 * @param course
-	 * 				O parâmetro que define o valor do atributo de classe {@code courses}.
+	 * 				O parâmetro que refere uma instância de um objeto do tipo {@code Course} e define o valor do atributo de classe {@code courses}.
 	 */
 	public void add(Course course) {
 		this.courses.add(course);
@@ -112,14 +116,32 @@ public class ProfessionalCertificate {
 	 * Provê o método de classe que define o valor do atributo de classe {@code students} do objeto atual.
 	 * 
 	 * @param student
-	 * 				O parâmetro que define o valor do atributo de classe {@code students}.
+	 * 				O parâmetro que refere uma instância de um objeto do tipo {@code Student} e define o valor do atributo de classe {@code students}.
 	 */
-	public void register(Student student) {
+	public void isRegistered(Student student) {
 		this.students.add(student);
+		this.registerTheStudent.put(student.getRegistration(), student);
 	}
 	
 	@Override
 	public String toString() {
 		return "[Certificado Profissional: " + this.getTitle() + "; " + "Duração: " + this.getDurationOfTheProfessionalCertificate() + " minutos.]"; 
+	}
+
+	/**
+	 * Provê o método de classe que obtém o valor do atributo de classe {@code students} do objeto atual.
+	 * 
+	 * @param registry
+	 * 				O parâmetro que define o valor do atributo de classe {@code student}.
+	 * 
+	 * @return this.registerTheStudent.get(registry)
+	 *         Retorna o valor do atributo de classe {@code registerTheStudent} em comparação a outro valor do atributo de classe {@code registerTheStudent}. 
+	 */
+	public Student searchRegistered(int registry) {
+		if (!registerTheStudent.containsKey(registry)) {
+			throw new NoSuchElementException("O número de registro não fora encontrado.");
+		} else {
+			return this.registerTheStudent.get(registry);
+		}
 	}
 }

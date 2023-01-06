@@ -31,7 +31,7 @@ public class TestingDefaultMethod {
 
 		System.out.println("B-) Os alunos matriculados são: \n");
 
-		// Processo de implementação do método default sort().
+		// Processo de implementação do método default forEach().
 		students.forEach(consumer);
 	}
 }
